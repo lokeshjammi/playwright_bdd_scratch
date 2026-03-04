@@ -1,5 +1,8 @@
 from multiprocessing import context
+from os import name
 from typing import Self
+
+from playwright.sync_api import Page
 from pages.basepage import BasePage
 
 
@@ -7,6 +10,7 @@ class RegistrationPage(BasePage):
     def __init__(self, page) -> None:
         super().__init__(page)
         self.page = page
+        # self.base_page = BasePage(page)
 
     def open_given_url(self, url):
         self.page.goto(url, wait_until='networkidle')
@@ -21,3 +25,11 @@ class RegistrationPage(BasePage):
             pass
         else:
             print("Form is not displayed")
+
+    def click_field(self):
+        self.name_field_xpath = "//input[@name='name']"
+        self.click(self.name_field_xpath)
+
+    def enter_field_value(self, field_value):
+        self.enter_text(self.name_field_xpath, field_value)
+        self.page.screenshot(path="screenshot.png", full_page=True)

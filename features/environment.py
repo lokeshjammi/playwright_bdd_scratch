@@ -10,7 +10,7 @@ def before_scenario(context, scenario):
     context.play_wright = sync_playwright().start()
     browser = read_config_file('basic_info', 'browser')
     if browser == 'chrome':
-        context.browser = context.play_wright.chromium.launch(headless=True)
+        context.browser = context.play_wright.chromium.launch(headless=False)
         context.page = context.browser.new_page(viewport={'width': 1920, 'height': 1080})
 
 def after_scenario(context, scenario):
