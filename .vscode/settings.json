@@ -1,0 +1,9 @@
+{
+    "python.terminal.executeInFileDir": false,
+    "terminal.integrated.env.linux": {
+        "PYTHONPATH": "${workspaceFolder}"
+    },
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}"
+    ]
+}
