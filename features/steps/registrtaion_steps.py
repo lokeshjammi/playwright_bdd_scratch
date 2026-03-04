@@ -12,3 +12,7 @@ def step_impl(context):
 @when(u'page title is displayed as "{page_title}"')
 def step_impl(context, page_title):
     context.registration_page.read_page_title(page_title)
+
+@then('Check for the display of registration form with title "{registration_form_title}"')
+def step_impl(context, registration_form_title):
+    context.registration_page.check_registration_form_title(registration_form_title)

@@ -7,3 +7,4 @@ Feature: Check registration feature in way2automation.com
     Scenario: Check registration feature in way2automation.com
         Given I am on the way2automation.com homepage
         When page title is displayed as "Welcome to the Test Site"
+        Then Check for the display of registration form with title "Dummy Registration Form"
